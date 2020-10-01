@@ -50,8 +50,8 @@ def get_lyrics(data):
         indx = genius_track.find("-")
         genius_track = genius_track[:indx-1]
     print (genius_artist,genius_track)    
-    genius_artist = genius_artist.replace(" ", "-").replace("/", "-").replace("'", "")
-    genius_track = genius_track.replace(" ","-").replace("/", "-").replace("'", "").replace(",","")
+    genius_artist = genius_artist.replace(" ", "-").replace("/", "-").replace("'", "").replace("&", "and")
+    genius_track = genius_track.replace(" ","-").replace("/", "-").replace("'", "").replace(",","").replace("&", "and")
 
     res = requests.get(f"https://genius.com/{genius_artist}-{genius_track}-lyrics")
     if res.status_code not in range(200,299):
