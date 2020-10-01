@@ -1,6 +1,5 @@
 import requests
 import base64
-import datetime
 import creds
 import webbrowser
 
